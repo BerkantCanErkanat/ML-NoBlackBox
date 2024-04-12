@@ -1,0 +1,59 @@
+Data Scaling
+
+ Data scaling in machine learning refers to the process of normalizing or 
+ standardizing the features of your dataset before applying a machine learning algorithm
+
+ Effect of Different Scales:
+
+Consider a dataset where one feature (e.g., age) ranges from 0 to 100, while another feature (e.g., income) ranges from 0 to 100,000. 
+These features are on vastly different scales. 
+Many machine learning algorithms compute distances between data points (like in clustering) 
+or use gradient-based optimization (like in neural networks). 
+Features with larger scales can dominate those with smaller scales, 
+impacting model performance and convergence.
+
+Types of Data Scaling
+Normalization (Min-Max Scaling):
+
+What it does: Scales the data to a fixed range (commonly 0 to 1).
+Example: Scaling ages (0-100) and incomes (0-100,000) to a uniform range.
+Formula : data = (data - minData)/(MaxData - minData)
+
+Standardization (Z-score Scaling):
+
+What it does: Scales the data so that it has a mean of 0 and a standard deviation of 1.
+Standardizing heights and weights to have comparable distributions.
+Formula : data = (data - upsilon)/sigma
+
+//example
+data1: age = 40 income = 70000
+data2: age = 100 income = 100000
+
+//test data
+test1: age = 99 income = 72000
+
+//when you plot all these and find the distance between test1-data1 and test1-data2 
+//eventhough visually test1-data1 will be far away from each other, this distance will be smaller
+
+--if we made the same process again with data scaling applied, we would visually get a better view.
+--points would be closer to each other and the result would not change.
+
+//another example
+-- when we measure the distance between points, since income scale is much bigger, it would weight more.
+--we may want this or not want this. But we can use data scaling to scale them in the same dimension [0,1]
+--so every feature would weight the same.
+
+
+-------------------------------------------------------
+
+Decision Boundaries
+
+Decision boundaries are a fundamental concept in machine learning 
+that define the separation between different classes or categories in a dataset. 
+When we train a machine learning model to classify data into
+different categories (e.g., classifying emails as spam or not spam based on certain features), 
+the model learns to make decisions based on these features. 
+The decision boundary is the line, surface, or hyperplane that divides the feature space into regions corresponding to different classes.
+
+Visualizing decision boundaries can help in understanding 
+how a machine learning model is making decisions based on input features
